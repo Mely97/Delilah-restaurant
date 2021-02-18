@@ -1,0 +1,162 @@
+****METHOD****
+POST
+****ENDPOINT****
+localhost:3000/usuarios/login
+****HEADERS****
+No Aplica
+****REQUEST(Body)****
+{
+    "nombredeusuario":"melanyherrera",
+    "contrasena":"1234"
+}
+****RESPONSE****
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21icmVkZXVzdWFyaW8iOiJtZWxhbnloZXJyZXJhIiwiY29udHJhc2VuYSI6IjEyMzQiLCJpYXQiOjE2MTMwODc1NzJ9.0zm3iF4tLpsS9lbBtT-SuEdzk33Gt6_BfoIL62BHav8"
+}
+
+================================================================================================================
+****METHOD****
+POST
+****ENDPOINT****
+localhost:3000/productos
+****HEADERS****
+authorization -> eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21icmVkZXVzdWFyaW8iOiJtZWxhbnloZXJyZXJhIiwiY29udHJhc2VuYSI6IjEyMzQiLCJpYXQiOjE2MTMwODc1NzJ9.0zm3iF4tLpsS9lbBtT-SuEdzk33Gt6_BfoIL62BHav8
+****REQUEST(Body)****
+{
+    "nombre": "Chocolate",
+    "precio": 1850,
+    "ingredientes": "Agua y chocolate y queso"
+}
+****RESPONSE****
+{
+    "ok": true,
+    "res": "Producto creado"
+}
+
+================================================================================================================
+****METHOD****
+GET
+****ENDPOINT****
+localhost:3000/productos
+****HEADERS****
+authorization -> eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21icmVkZXVzdWFyaW8iOiJtZWxhbnloZXJyZXJhIiwiY29udHJhc2VuYSI6IjEyMzQiLCJpYXQiOjE2MTMwODc1NzJ9.0zm3iF4tLpsS9lbBtT-SuEdzk33Gt6_BfoIL62BHav8
+****REQUEST(Body)****
+No Aplica
+****RESPONSE****
+{
+    "ok": true,
+    "res": "Producto creado"
+}
+
+================================================================================================================
+****METHOD****
+PUT
+****ENDPOINT****
+localhost:3000/productos/:id
+****HEADERS****
+authorization -> eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21icmVkZXVzdWFyaW8iOiJtZWxhbnloZXJyZXJhIiwiY29udHJhc2VuYSI6IjEyMzQiLCJpYXQiOjE2MTMwODc1NzJ9.0zm3iF4tLpsS9lbBtT-SuEdzk33Gt6_BfoIL62BHav8
+****REQUEST(Body)****
+{
+    "nombre": "Huevos Mexicanos",
+    "precio":4000,
+    "ingredientes":"Huevos, salchicha, maiz, queso EDITADO"
+}
+****RESPONSE****
+{
+    "ok": true,
+    "res": "Producto actualizado",
+    "resultados": [
+        {
+            "fieldCount": 0,
+            "affectedRows": 0,
+            "insertId": 0,
+            "info": "Rows matched: 1  Changed: 0  Warnings: 0",
+            "serverStatus": 2,
+            "warningStatus": 0,
+            "changedRows": 0
+        },
+        {
+            "fieldCount": 0,
+            "affectedRows": 0,
+            "insertId": 0,
+            "info": "Rows matched: 1  Changed: 0  Warnings: 0",
+            "serverStatus": 2,
+            "warningStatus": 0,
+            "changedRows": 0
+        }
+    ]
+}
+
+================================================================================================================
+
+****METHOD****
+DEL
+****ENDPOINT****
+localhost:3000/productos/:id
+****HEADERS****
+authorization -> eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21icmVkZXVzdWFyaW8iOiJtZWxhbnloZXJyZXJhIiwiY29udHJhc2VuYSI6IjEyMzQiLCJpYXQiOjE2MTMwODc1NzJ9.0zm3iF4tLpsS9lbBtT-SuEdzk33Gt6_BfoIL62BHav8
+****REQUEST(Body)****
+No Aplica
+****RESPONSE****
+{
+    "ok": true,
+    "message": "Producto eliminado",
+    "resultados": [
+        {
+            "fieldCount": 0,
+            "affectedRows": 1,
+            "insertId": 0,
+            "info": "",
+            "serverStatus": 2,
+            "warningStatus": 0
+        },
+        {
+            "fieldCount": 0,
+            "affectedRows": 1,
+            "insertId": 0,
+            "info": "",
+            "serverStatus": 2,
+            "warningStatus": 0
+        }
+    ]
+}
+
+================================================================================================================
+****METHOD****
+POST
+****ENDPOINT****
+localhost:3000/pedidos
+****HEADERS****
+authorization -> eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21icmVkZXVzdWFyaW8iOiJtZWxhbnloZXJyZXJhIiwiY29udHJhc2VuYSI6IjEyMzQiLCJpYXQiOjE2MTMwODc1NzJ9.0zm3iF4tLpsS9lbBtT-SuEdzk33Gt6_BfoIL62BHav8
+****REQUEST(Body)****
+{
+    "mododepago": "efectivo",
+    "productos": [
+        {
+            "id": 6,
+            "nombre": "Huevos Mexicanos",
+            "precio": 4000,
+            "ingredientes": "Huevos, salchicha, maiz, queso EDITADO",
+            "cantidad": 5
+        },
+         {
+            "id": 8,
+            "nombre": "Caldo",
+            "precio": 800,
+            "ingredientes": "Agua y costilla",
+            "cantidad":1
+        },
+        {
+            "id": 9,
+            "nombre": "Chocolate",
+            "precio": 1850,
+            "ingredientes": "Agua y chocolate y queso",
+            "cantidad":3
+        }
+    ]
+}
+****RESPONSE****
+{
+    "ok": true,
+    "res": "Pedido enviado con éxito"
+}
