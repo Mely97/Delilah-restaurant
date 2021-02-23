@@ -185,5 +185,6 @@ async function guardarInfopedidos(req, res, idPedido) {
       { replacements: [idPedido, producto.id] }
     );
   });
+   productosPedidos = [];
   return res.status(201).json({ ok: true, res: "Pedido enviado con éxito" });
 }
